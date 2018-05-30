@@ -11,8 +11,8 @@ export const getNotes = () => {
 };
 
 export const deleteNote = (id) => {
-  return Note.delete(id)
-    .then((note) => {
+  return Note.findById(id).remove()
+    .then((result) => {
       console.log('note deleted');
     })
     .catch((error) => {
